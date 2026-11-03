@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="dirBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#075985" />
+    </linearGradient>
+    <linearGradient id="dirSkinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa" />
+      <stop offset="100%" stop-color="#fba86b" />
+    </linearGradient>
+    <linearGradient id="dirBlazerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="dirSilkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="dirPearlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity="0.25" flood-color="#0f172a" />
+    </filter>
+  </defs>
+
+  <!-- Circular Outer Frame with Sky Blue Gradient -->
+  <circle cx="200" cy="200" r="190" fill="url(#dirBgGrad)" />
+  <circle cx="200" cy="200" r="184" fill="#ffffff" opacity="0.08" />
+  <circle cx="200" cy="200" r="182" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.3" />
+
+  <!-- Subtle Radial Glow behind head -->
+  <circle cx="200" cy="150" r="130" fill="#38bdf8" opacity="0.25" />
+
+  <!-- Hair Back Volume -->
+  <path d="M105 190 C95 100 135 55 200 55 C265 55 305 100 295 190 C290 235 280 270 275 285 C240 268 160 268 125 285 C120 270 110 235 105 190 Z" fill="#1c1917" />
+
+  <!-- Neck -->
+  <rect x="178" y="210" width="44" height="60" rx="8" fill="url(#dirSkinGrad)" />
+  <!-- Shadow under jawline -->
+  <path d="M178 214 Q200 232 222 214 L222 225 Q200 242 178 225 Z" fill="#c2410c" opacity="0.18" />
+
+  <!-- Elegant Silk Blouse / Inner Collar -->
+  <path d="M165 255 L200 315 L235 255 Z" fill="#ffffff" />
+  <path d="M178 268 L200 315 L222 268 Z" fill="url(#dirSilkGrad)" opacity="0.9" />
+
+  <!-- Pearl Necklace -->
+  <g fill="url(#dirPearlGrad)" stroke="#cbd5e1" stroke-width="0.5">
+    <circle cx="174" cy="245" r="4.5" />
+    <circle cx="184" cy="250" r="4.5" />
+    <circle cx="195" cy="253" r="5" />
+    <circle cx="205" cy="253" r="5" />
+    <circle cx="216" cy="250" r="4.5" />
+    <circle cx="226" cy="245" r="4.5" />
+  </g>
+
+  <!-- Professional Executive Blazer -->
+  <path d="M85 390 C85 305 130 265 168 255 L200 330 L232 255 C270 265 315 305 315 390 Z" fill="url(#dirBlazerGrad)" />
+  <!-- Lapel Left -->
+  <path d="M168 255 L135 330 L185 342 L196 288 Z" fill="#1e293b" />
+  <!-- Lapel Right -->
+  <path d="M232 255 L265 330 L215 342 L204 288 Z" fill="#1e293b" />
+  <!-- Gold IDPS Trim on Lapel -->
+  <path d="M168 255 L135 330" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M232 255 L265 330" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Director Gold Emblem Badge -->
+  <circle cx="145" cy="326" r="10" fill="#f59e0b" filter="url(#softShadow)" />
+  <polygon points="145,319 147.5,324.5 153.5,324.5 148.5,328 150.5,333.5 145,330 139.5,333.5 141.5,328 136.5,324.5 142.5,324.5" fill="#ffffff" />
+
+  <!-- Face Contour -->
+  <path d="M142 165 C142 118 160 98 200 98 C240 98 258 118 258 165 C258 214 235 236 200 236 C165 236 142 214 142 165 Z" fill="url(#dirSkinGrad)" />
+
+  <!-- Ears & Pearl Studs -->
+  <circle cx="140" cy="170" r="11" fill="url(#dirSkinGrad)" />
+  <circle cx="260" cy="170" r="11" fill="url(#dirSkinGrad)" />
+  <circle cx="140" cy="172" r="4.5" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5" />
+  <circle cx="260" cy="172" r="4.5" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5" />
+
+  <!-- Elegant Styled Hair Front -->
+  <path d="M136 160 C134 110 162 82 200 82 C242 82 266 108 264 160 C258 135 238 120 200 120 C160 120 142 138 136 160 Z" fill="#1c1917" />
+  <!-- Side Hair Strands Frame Face -->
+  <path d="M140 150 C136 175 140 210 148 222 C143 205 142 180 144 160 Z" fill="#292524" />
+  <path d="M260 150 C264 175 260 210 252 222 C257 205 258 180 256 160 Z" fill="#292524" />
+  <!-- Swept Bangs Accent -->
+  <path d="M160 92 C185 96 215 110 235 128 C215 115 185 106 160 92 Z" fill="#292524" />
+
+  <!-- Eyebrows -->
+  <path d="M160 154 Q174 148 186 153" stroke="#292524" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M214 153 Q226 148 240 154" stroke="#292524" stroke-width="3" stroke-linecap="round" fill="none" />
+
+  <!-- Eyes - Warm, Confident & Visionary -->
+  <g>
+    <!-- Left Eye -->
+    <path d="M162 166 Q173 158 184 166 Q173 174 162 166 Z" fill="#ffffff" />
+    <circle cx="173" cy="166" r="4.5" fill="#3f2e1e" />
+    <circle cx="174" cy="165" r="1.8" fill="#ffffff" />
+    <path d="M160 165 Q173 156 186 165" stroke="#1c1917" stroke-width="2" stroke-linecap="round" fill="none" />
+
+    <!-- Right Eye -->
+    <path d="M216 166 Q227 158 238 166 Q227 174 216 166 Z" fill="#ffffff" />
+    <circle cx="227" cy="166" r="4.5" fill="#3f2e1e" />
+    <circle cx="228" cy="165" r="1.8" fill="#ffffff" />
+    <path d="M214 165 Q227 156 240 165" stroke="#1c1917" stroke-width="2" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Gentle Nose -->
+  <path d="M200 166 L197 186 Q200 190 203 186 Z" fill="#ea580c" opacity="0.3" />
+  <path d="M195 186 Q200 191 205 186" stroke="#c2410c" stroke-width="1.8" stroke-linecap="round" fill="none" />
+
+  <!-- Warm, Welcoming Smile -->
+  <path d="M185 204 Q200 216 215 204" stroke="#be123c" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M188 205 Q200 213 212 205" fill="#ffffff" />
+  <!-- Lip Color Accent -->
+  <path d="M184 204 Q200 208 216 204 Q200 220 184 204 Z" fill="#e11d48" opacity="0.25" />
+
+  <!-- Soft Bindi (Traditional Indian Grace) -->
+  <circle cx="200" cy="144" r="2.2" fill="#be123c" />
+
+  <!-- Gold Star / Emblem Accent in bottom corner -->
+  <g transform="translate(40, 310)" opacity="0.85">
+    <circle cx="15" cy="15" r="16" fill="rgba(255,255,255,0.12)" />
+    <path d="M15 5 L17 12 L24 12 L19 16 L21 23 L15 19 L9 23 L11 16 L6 12 L13 12 Z" fill="#facc15" />
+  </g>
+</svg>
+

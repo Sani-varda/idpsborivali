@@ -1,0 +1,17 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary scripts
+scratch/
+*.tmp
+*.pyc
+__pycache__/
+

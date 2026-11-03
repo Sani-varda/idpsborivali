@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa" />
+      <stop offset="100%" stop-color="#fdba74" />
+    </linearGradient>
+    <linearGradient id="blazerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity="0.2" flood-color="#0284c7" />
+    </filter>
+  </defs>
+
+  <!-- Circular Base -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGrad)" />
+  <circle cx="200" cy="200" r="182" fill="#ffffff" opacity="0.08" />
+
+  <!-- Subtle Ambient Glow -->
+  <circle cx="200" cy="150" r="120" fill="#38bdf8" opacity="0.25" />
+
+  <!-- Hair Back -->
+  <path d="M120 180 C110 110 140 70 200 70 C260 70 290 110 280 180 C275 220 270 250 265 270 C230 255 170 255 135 270 C130 250 125 220 120 180 Z" fill="#1e1b18" />
+
+  <!-- Neck -->
+  <rect x="178" y="210" width="44" height="60" rx="8" fill="url(#skinGrad)" />
+  <!-- Shadow under chin -->
+  <path d="M178 215 Q200 230 222 215 L222 225 Q200 240 178 225 Z" fill="#ea580c" opacity="0.15" />
+
+  <!-- Inner Shirt / Blouse -->
+  <path d="M170 255 L200 310 L230 255 Z" fill="#ffffff" />
+  <path d="M190 275 L200 310 L210 275 Z" fill="#e2e8f0" />
+
+  <!-- Professional Blazer / Suit -->
+  <path d="M90 390 C90 310 135 270 170 260 L200 330 L230 260 C265 270 310 310 310 390 Z" fill="url(#blazerGrad)" />
+  <!-- Lapel Left -->
+  <path d="M170 260 L140 330 L185 340 L195 290 Z" fill="#334155" />
+  <!-- Lapel Right -->
+  <path d="M230 260 L260 330 L215 340 L205 290 Z" fill="#334155" />
+
+  <!-- Gold Academic Pin / IDPS Badge -->
+  <circle cx="150" cy="325" r="9" fill="url(#goldGrad)" filter="url(#softShadow)" />
+  <polygon points="150,319 152,324 157,324 153,327 155,332 150,329 145,332 147,327 143,324 148,324" fill="#ffffff" />
+
+  <!-- Face -->
+  <path d="M142 165 C142 120 160 100 200 100 C240 100 258 120 258 165 C258 212 235 235 200 235 C165 235 142 212 142 165 Z" fill="url(#skinGrad)" />
+
+  <!-- Ears -->
+  <circle cx="140" cy="168" r="12" fill="url(#skinGrad)" />
+  <circle cx="260" cy="168" r="12" fill="url(#skinGrad)" />
+  <!-- Pearl Earrings -->
+  <circle cx="138" cy="176" r="4.5" fill="#f8fafc" />
+  <circle cx="262" cy="176" r="4.5" fill="#f8fafc" />
+
+  <!-- Hair Front / Professional Styled Cut -->
+  <path d="M140 145 C145 105 170 85 200 85 C235 85 258 105 260 145 C250 120 235 110 200 110 C165 110 148 122 140 145 Z" fill="#2d2620" />
+  <path d="M140 145 C145 130 160 115 185 115 C170 125 155 138 148 160 Z" fill="#1e1b18" />
+  <path d="M260 145 C255 130 240 115 215 115 C230 125 245 138 252 160 Z" fill="#1e1b18" />
+
+  <!-- Eyebrows -->
+  <path d="M160 145 Q175 140 188 145" stroke="#2d2620" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M212 145 Q225 140 240 145" stroke="#2d2620" stroke-width="3" stroke-linecap="round" fill="none" />
+
+  <!-- Eyes -->
+  <circle cx="174" cy="158" r="5.5" fill="#1e293b" />
+  <circle cx="226" cy="158" r="5.5" fill="#1e293b" />
+  <circle cx="176" cy="156" r="2" fill="#ffffff" />
+  <circle cx="228" cy="156" r="2" fill="#ffffff" />
+
+  <!-- Eyelashes / Soft Definition -->
+  <path d="M165 154 Q174 150 183 154" stroke="#1e293b" stroke-width="2" stroke-linecap="round" fill="none" />
+  <path d="M217 154 Q226 150 235 154" stroke="#1e293b" stroke-width="2" stroke-linecap="round" fill="none" />
+
+  <!-- Modern Glasses (Smart / Intellectual look) -->
+  <rect x="156" y="146" width="34" height="24" rx="7" stroke="#0284c7" stroke-width="2.5" fill="none" opacity="0.85" />
+  <rect x="210" y="146" width="34" height="24" rx="7" stroke="#0284c7" stroke-width="2.5" fill="none" opacity="0.85" />
+  <path d="M190 155 Q200 152 210 155" stroke="#0284c7" stroke-width="2.5" fill="none" />
+  <path d="M156 154 L142 152" stroke="#0284c7" stroke-width="2" fill="none" />
+  <path d="M244 154 L258 152" stroke="#0284c7" stroke-width="2" fill="none" />
+
+  <!-- Nose -->
+  <path d="M197 165 Q200 180 203 180 Q206 180 206 177" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5" />
+
+  <!-- Warm Confident Smile -->
+  <path d="M182 198 Q200 214 218 198" stroke="#be123c" stroke-width="3" stroke-linecap="round" fill="none" />
+  <!-- Upper Lip -->
+  <path d="M185 198 Q200 195 215 198" stroke="#be123c" stroke-width="1.5" stroke-linecap="round" fill="none" />
+  <!-- Teeth highlight -->
+  <path d="M186 200 Q200 208 214 200 Q200 204 186 200 Z" fill="#ffffff" />
+
+  <!-- Circular Outer Border -->
+  <circle cx="200" cy="200" r="190" stroke="#bae6fd" stroke-width="5" fill="none" />
+  <circle cx="200" cy="200" r="195" stroke="#0284c7" stroke-width="2" fill="none" />
+</svg>
+

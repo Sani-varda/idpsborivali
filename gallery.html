@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Photo Gallery | IDPS BORIVALI - Campus & Student Life</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="View photo galleries of IDPS BORIVALI campuses, modern laboratories, smart classrooms, sports complexes, and vibrant cultural events.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="assets/img/logo.svg" type="image/x-icon">
+		<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+
+		<!-- Fonts & Styles -->
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+		<link rel="stylesheet" href="assets/vendor/lightgallery/css/lightgallery.min.css">
+		<link rel="stylesheet" href="assets/css/theme.css">
+		<link rel="stylesheet" href="assets/css/helper.css">
+		<link rel="stylesheet" href="assets/css/idps-custom.css">
+		<style>
+			body { font-family: 'Plus Jakarta Sans', sans-serif; color: #0f172a; background: #ffffff; }
+			.btn-pill { border-radius: 30px !important; padding: 10px 24px; }
+			.gallery-filter-btn { 
+				margin: 5px; 
+				border-radius: 30px; 
+				font-size: 13.5px; 
+				font-weight: 700; 
+				padding: 8px 22px; 
+				border: 1.5px solid #1e293b; 
+				background: #ffffff; 
+				color: #0f172a; 
+				transition: all 0.25s ease; 
+				cursor: pointer; 
+			}
+			.gallery-filter-btn.active, .gallery-filter-btn:hover { 
+				background: #0f172a; 
+				color: #ffffff; 
+				border-color: #0f172a; 
+				box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2); 
+			}
+			.gallery-box { 
+				position: relative; 
+				overflow: hidden; 
+				border-radius: 6px; 
+				margin-bottom: 20px; 
+				box-shadow: 0 4px 18px rgba(0,0,0,0.1); 
+				transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease; 
+				display: block; 
+				background: #000000; 
+				text-decoration: none !important; 
+			}
+			.gallery-box:hover { 
+				transform: translateY(-4px); 
+				box-shadow: 0 12px 28px rgba(0,0,0,0.22); 
+			}
+			.gallery-box img { 
+				width: 100%; 
+				height: 420px; 
+				object-fit: cover; 
+				display: block; 
+				transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+			}
+			@media (max-width: 768px) {
+				.gallery-box img { height: 260px; }
+			}
+			.gallery-box:hover img { 
+				transform: scale(1.05); 
+			}
+			.gallery-caption { 
+				position: absolute; 
+				bottom: 0; 
+				left: 0; 
+				right: 0; 
+				padding: 30px 18px 16px 18px; 
+				background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.45) 60%, transparent 100%); 
+				color: #ffffff; 
+			}
+			.gallery-caption h4 {
+				margin: 0;
+				color: #ffffff !important;
+				font-weight: 800;
+				font-size: 19px;
+				line-height: 1.3;
+				text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+			}
+			.gallery-caption p {
+				margin: 4px 0 0 0;
+				font-size: 13.5px;
+				color: #f1f5f9 !important;
+				opacity: 0.95;
+				text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+			}
+		</style>
+	</head>
+
+	<body id="body">
+		<!-- Top Contact Bar -->
+		<div class="idps-topbar hide-from-xs">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-7">
+						<span><i class="fas fa-map-marker-alt text-warning"></i> Campus: International Delhi Public School, Borivali, Mumbai, Maharashtra</span>
+					</div>
+					<div class="col-sm-5 text-right">
+						<a href="tel:+917738196931"><i class="fas fa-phone-alt"></i> +91 77381 96931</a>
+						<a href="https://wa.me/917738196931" target="_blank"><i class="fab fa-whatsapp text-success"></i> +91 77381 96931</a>
+						<a href="contact.html"><i class="fas fa-envelope"></i> admissions@idpsborivali.com</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Header -->
+		<header id="header" class="fixed-top">
+			<div class="header-inner">
+
+				<!-- Begin logo -->
+				<div id="logo">
+					<a href="index.html">
+						<img src="assets/img/logo.svg" alt="IDPS Borivali Logo">
+						<div class="logo-brand-text">
+							<span class="logo-main-title">IDPS BORIVALI</span>
+							<span class="logo-sub-title">International Delhi Public School</span>
+						</div>
+					</a>
+				</div>
+				<!-- End logo -->
+
+				<!-- Header tools (Mobile menu trigger) -->
+				<div class="header-tools">
+					<ul>
+						<li>
+							<a id="cd-menu-trigger" href="#0"><span class="cd-menu-icon"></span>menu</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Navigation Menu -->
+				<nav class="navbar navbar-default">
+					<div class="navbar-inner">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+								data-target="#navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<div class="collapse navbar-collapse" id="navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="index.html">Home</a></li>
+								<li class="dropdown">
+								<a href="about.html" class="dropdown-toggle" data-toggle="dropdown">About Us <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="about.html"><i class="fas fa-university"></i> About IDPS Borivali</a></li>
+									<li><a href="chairman.html"><i class="fas fa-user-tie"></i> Chairman's Message</a></li>
+									<li><a href="director.html"><i class="fas fa-compass"></i> Director's Message</a></li>
+									<li><a href="principal.html"><i class="fas fa-user-graduate"></i> Principal's Message</a></li>
+								</ul>
+							</li>
+								<li><a href="brands.html">Academics</a></li>
+								<li><a href="schools.html">Facilities</a></li>
+								<li class="active"><a href="gallery.html">Campus Tour</a></li>
+								<li><a href="franchise.html">Admissions</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+								<li style="margin-left: 10px;">
+									<a href="franchise.html" class="btn btn-idps btn-pill"
+										style="margin-top: 14px; padding: 7px 20px !important; color:#fff !important; font-size:12px;">Admissions Open</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Off-canvas lateral navigation -->
+		<nav id="cd-lateral-nav">
+			<div class="nav-inner">
+				<div class="menu-header">IDPS Menu</div>
+				<ul class="cd-navigation">
+				<li><a class="link" href="index.html">Home</a></li>
+				<li><a class="link" href="about.html">About IDPS Borivali</a></li>
+				<li style="padding-left: 20px;"><a class="link" href="chairman.html"><i class="fas fa-chevron-right text-info small" style="margin-right: 6px;"></i> Chairman's Message</a></li>
+				<li style="padding-left: 20px;"><a class="link" href="director.html"><i class="fas fa-chevron-right text-info small" style="margin-right: 6px;"></i> Director's Message</a></li>
+				<li style="padding-left: 20px;"><a class="link" href="principal.html"><i class="fas fa-chevron-right text-info small" style="margin-right: 6px;"></i> Principal's Message</a></li>
+				<li><a class="link" href="brands.html">Academics (CBSE Curriculum)</a></li>
+				<li><a class="link" href="schools.html">Campus Facilities & Labs</a></li>
+				<li><a class="link" href="gallery.html">Campus Photo Tour</a></li>
+				<li><a class="link" href="franchise.html">Admissions 2026-27</a></li>
+				<li><a class="link" href="contact.html">Contact & Location</a></li>
+			</ul>
+			</div>
+		</nav>
+
+		<!-- Body Content -->
+		<div id="body-content">
+			<!-- Page Header -->
+			<section class="alter-heading bg-image" style="background-image: url('assets/img/idps/hero-idps-borivali.jpg'); padding: 165px 0 70px 0; position: relative;">
+				<div class="cover" style="background: rgba(2, 132, 199, 0.88);"></div>
+				<div class="container text-center" style="position: relative; z-index: 2; color: #fff;">
+					<span class="idps-hero-badge">CAMPUS LIFE & INFRASTRUCTURE</span>
+					<h1 style="color: #fff; font-size: 38px; font-weight: 800; margin-top: 10px;">Photo Gallery</h1>
+					<p style="color: #e0f2fe; font-size: 16px; max-width: 650px; margin: 0 auto;">Explore the vibrant campus architecture, modern laboratories, digital smart classrooms, and athletic facilities of IDPS Borivali.</p>
+				</div>
+			</section>
+
+			<!-- Filterable LightGallery Grid (Full-Width Edge-to-Edge) -->
+			<section style="padding: 50px 0 70px 0; background: #ffffff;">
+				<div class="container-fluid" style="padding-left: 20px; padding-right: 20px; max-width: 100%;">
+					
+					<!-- Gallery Filter Controls -->
+					<div class="text-center margin-bottom-35">
+						<button class="gallery-filter-btn active" data-filter="all">All Photos</button>
+						<button class="gallery-filter-btn" data-filter="campuses">Campuses & Architecture</button>
+						<button class="gallery-filter-btn" data-filter="academics">Classrooms & Labs</button>
+						<button class="gallery-filter-btn" data-filter="activities">Sports & Culture</button>
+					</div>
+
+					<div class="row lightgallery" id="galleryGrid" style="margin-left: -8px; margin-right: -8px;">
+
+						<!-- Item 1: Central Campus Atrium & Sunlit Skylight -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item campuses" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/atrium-skylight.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Central Campus Atrium & Sunlit Skylight</h4><p>Natural daylighting and airy multi-tier architectural design</p>">
+								<picture>
+									<source srcset="assets/img/gallery/atrium-skylight.webp" type="image/webp">
+									<img src="assets/img/gallery/atrium-skylight.jpg" alt="Central Campus Atrium & Sunlit Skylight" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Central Campus Atrium & Sunlit Skylight</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Natural daylighting and airy multi-tier architectural design</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 2: Ashoka Central Assembly Amphitheatre -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item campuses" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/ashoka-court-interior.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Ashoka Central Assembly Amphitheatre</h4><p>Spacious indoor arena for exhibitions, assemblies and seminars</p>">
+								<picture>
+									<source srcset="assets/img/gallery/ashoka-court-interior.webp" type="image/webp">
+									<img src="assets/img/gallery/ashoka-court-interior.jpg" alt="Ashoka Central Assembly Amphitheatre" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Ashoka Central Assembly Amphitheatre</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Spacious indoor arena for exhibitions, assemblies and seminars</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 3: Hygienic Boys' Restroom & Sanitization -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item campuses" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/modern-boys-washroom.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Hygienic Boys' Restroom & Sanitization</h4><p>Sensor fixtures, anti-skid flooring and pristine sanitation</p>">
+								<picture>
+									<source srcset="assets/img/gallery/modern-boys-washroom.webp" type="image/webp">
+									<img src="assets/img/gallery/modern-boys-washroom.jpg" alt="Hygienic Boys' Restroom & Sanitization" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Hygienic Boys' Restroom & Sanitization</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Sensor fixtures, anti-skid flooring and pristine sanitation</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 4: Hygienic Girls' Restroom Facility -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item campuses" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/modern-girls-washroom.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Hygienic Girls' Restroom Facility</h4><p>Safe, dedicated, spotless and thoughtfully designed amenities</p>">
+								<picture>
+									<source srcset="assets/img/gallery/modern-girls-washroom.webp" type="image/webp">
+									<img src="assets/img/gallery/modern-girls-washroom.jpg" alt="Hygienic Girls' Restroom Facility" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Hygienic Girls' Restroom Facility</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Safe, dedicated, spotless and thoughtfully designed amenities</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 5: Digital IT & Computer Science Lab -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/indian-school-computer-lab.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Digital IT & Computer Science Lab</h4><p>High-speed workstations for computer science and coding</p>">
+								<picture>
+									<source srcset="assets/img/gallery/indian-school-computer-lab.webp" type="image/webp">
+									<img src="assets/img/gallery/indian-school-computer-lab.jpg" alt="Digital IT & Computer Science Lab" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Digital IT & Computer Science Lab</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">High-speed workstations for computer science and coding</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 6: Symmetrical Coding & AI Lab -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/symmetrical-computer-lab.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Symmetrical Coding & AI Lab</h4><p>Advanced digital workstations for AI, Python and cyber skills</p>">
+								<picture>
+									<source srcset="assets/img/gallery/symmetrical-computer-lab.webp" type="image/webp">
+									<img src="assets/img/gallery/symmetrical-computer-lab.jpg" alt="Symmetrical Coding & AI Lab" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Symmetrical Coding & AI Lab</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Advanced digital workstations for AI, Python and cyber skills</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 7: STEM Innovation & Makerspace Workshop -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/makerspace-workshop.webp" class="gallery-box lg-trigger" data-sub-html="<h4>STEM Innovation & Makerspace Workshop</h4><p>Hands-on engineering workbench, 3D kits and robotics tools</p>">
+								<picture>
+									<source srcset="assets/img/gallery/makerspace-workshop.webp" type="image/webp">
+									<img src="assets/img/gallery/makerspace-workshop.jpg" alt="STEM Innovation & Makerspace Workshop" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">STEM Innovation & Makerspace Workshop</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Hands-on engineering workbench, 3D kits and robotics tools</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 8: Etiquette, Financial Literacy & Chess Lab -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/pastel-blue-learning-lab.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Etiquette, Financial Literacy & Chess Lab</h4><p>Practical 21st-century habits, social decorum and strategic games</p>">
+								<picture>
+									<source srcset="assets/img/gallery/pastel-blue-learning-lab.webp" type="image/webp">
+									<img src="assets/img/gallery/pastel-blue-learning-lab.jpg" alt="Etiquette, Financial Literacy & Chess Lab" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Etiquette, Financial Literacy & Chess Lab</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Practical 21st-century habits, social decorum and strategic games</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 9: Mint-Green Collaborative Study Pods -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/geometric-study-pods.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Mint-Green Collaborative Study Pods</h4><p>Modern acoustic booths for group discussions and research</p>">
+								<picture>
+									<source srcset="assets/img/gallery/geometric-study-pods.webp" type="image/webp">
+									<img src="assets/img/gallery/geometric-study-pods.jpg" alt="Mint-Green Collaborative Study Pods" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Mint-Green Collaborative Study Pods</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Modern acoustic booths for group discussions and research</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 10: Early Years Foundational Activity Lab -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/kids-learning-lab.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Early Years Foundational Activity Lab</h4><p>Montessori interactive learning aids and sensory stations</p>">
+								<picture>
+									<source srcset="assets/img/gallery/kids-learning-lab.webp" type="image/webp">
+									<img src="assets/img/gallery/kids-learning-lab.jpg" alt="Early Years Foundational Activity Lab" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Early Years Foundational Activity Lab</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Montessori interactive learning aids and sensory stations</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 11: Colourful Kindergarten Classroom -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/preschool-classroom.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Colourful Kindergarten Classroom</h4><p>Vibrant, cheerful environment inspiring early foundational curiosity</p>">
+								<picture>
+									<source srcset="assets/img/gallery/preschool-classroom.webp" type="image/webp">
+									<img src="assets/img/gallery/preschool-classroom.jpg" alt="Colourful Kindergarten Classroom" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Colourful Kindergarten Classroom</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Vibrant, cheerful environment inspiring early foundational curiosity</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 12: Interactive Smart Classroom -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/colourful-classroom-learning.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Interactive Smart Classroom</h4><p>Smart board integration with dynamic pedagogical instruction</p>">
+								<picture>
+									<source srcset="assets/img/gallery/colourful-classroom-learning.webp" type="image/webp">
+									<img src="assets/img/gallery/colourful-classroom-learning.jpg" alt="Interactive Smart Classroom" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Interactive Smart Classroom</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Smart board integration with dynamic pedagogical instruction</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 13: Creative Skills & Life-Skills Studio -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item academics" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/rainbow-skills-classroom.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Creative Skills & Life-Skills Studio</h4><p>Multi-disciplinary space fostering presentation and teamwork</p>">
+								<picture>
+									<source srcset="assets/img/gallery/rainbow-skills-classroom.webp" type="image/webp">
+									<img src="assets/img/gallery/rainbow-skills-classroom.jpg" alt="Creative Skills & Life-Skills Studio" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Creative Skills & Life-Skills Studio</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Multi-disciplinary space fostering presentation and teamwork</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 14: Sky-Blue Dance & Performing Arts Studio -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item activities" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/dance-studio-gallery.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Sky-Blue Dance & Performing Arts Studio</h4><p>Full-length mirrored dance studio adorned with classical mudras</p>">
+								<picture>
+									<source srcset="assets/img/gallery/dance-studio-gallery.webp" type="image/webp">
+									<img src="assets/img/gallery/dance-studio-gallery.jpg" alt="Sky-Blue Dance & Performing Arts Studio" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Sky-Blue Dance & Performing Arts Studio</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Full-length mirrored dance studio adorned with classical mudras</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 15: Rainbow Acoustic Music & Orchestra Studio -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item activities" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/music-classroom-rainbow.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Rainbow Acoustic Music & Orchestra Studio</h4><p>Acoustic-treated studio with keyboards, tabla, drums and vocals</p>">
+								<picture>
+									<source srcset="assets/img/gallery/music-classroom-rainbow.webp" type="image/webp">
+									<img src="assets/img/gallery/music-classroom-rainbow.jpg" alt="Rainbow Acoustic Music & Orchestra Studio" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Rainbow Acoustic Music & Orchestra Studio</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Acoustic-treated studio with keyboards, tabla, drums and vocals</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 16: Vibrant Visual Arts & Sculpture Studio -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item activities" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/create-art-classroom.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Vibrant Visual Arts & Sculpture Studio</h4><p>Expressive fine arts studio for sketching, painting and pottery</p>">
+								<picture>
+									<source srcset="assets/img/gallery/create-art-classroom.webp" type="image/webp">
+									<img src="assets/img/gallery/create-art-classroom.jpg" alt="Vibrant Visual Arts & Sculpture Studio" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Vibrant Visual Arts & Sculpture Studio</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Expressive fine arts studio for sketching, painting and pottery</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 17: Rainbow Yoga & Mindfulness Studio -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item activities" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/rainbow-forest-yoga-corridor.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Rainbow Yoga & Mindfulness Studio</h4><p>Calm, holistic wellness studio for yoga, meditation and posture</p>">
+								<picture>
+									<source srcset="assets/img/gallery/rainbow-forest-yoga-corridor.webp" type="image/webp">
+									<img src="assets/img/gallery/rainbow-forest-yoga-corridor.jpg" alt="Rainbow Yoga & Mindfulness Studio" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Rainbow Yoga & Mindfulness Studio</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Calm, holistic wellness studio for yoga, meditation and posture</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 18: Pastel Kids' Gymnastics & Agility Arena -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item activities" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/kids-gymnastics-studio.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Pastel Kids' Gymnastics & Agility Arena</h4><p>Safety-cushioned indoor gymnastics arena for motor skill growth</p>">
+								<picture>
+									<source srcset="assets/img/gallery/kids-gymnastics-studio.webp" type="image/webp">
+									<img src="assets/img/gallery/kids-gymnastics-studio.jpg" alt="Pastel Kids' Gymnastics & Agility Arena" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Pastel Kids' Gymnastics & Agility Arena</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Safety-cushioned indoor gymnastics arena for motor skill growth</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 19: Professional Cricket Practice Nets & Turf -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item activities" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/cricket-practice-cage.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Professional Cricket Practice Nets & Turf</h4><p>All-weather caged practice pitch for batting and bowling mastery</p>">
+								<picture>
+									<source srcset="assets/img/gallery/cricket-practice-cage.webp" type="image/webp">
+									<img src="assets/img/gallery/cricket-practice-cage.jpg" alt="Professional Cricket Practice Nets & Turf" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Professional Cricket Practice Nets & Turf</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">All-weather caged practice pitch for batting and bowling mastery</p>
+								</div>
+							</a>
+						</div>
+
+<!-- Item 20: IDPS Borivali Main Building Facade -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item activities campuses" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/institutional-building-facade.webp" class="gallery-box lg-trigger" data-sub-html="<h4>IDPS Borivali Main Building Facade</h4><p>Signature modern multi-storey institutional architecture</p>">
+								<picture>
+									<source srcset="assets/img/gallery/institutional-building-facade.webp" type="image/webp">
+									<img src="assets/img/gallery/institutional-building-facade.jpg" alt="IDPS Borivali Main Building Facade" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">IDPS Borivali Main Building Facade</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Signature modern multi-storey institutional architecture</p>
+								</div>
+							</a>
+						</div>
+
+						<!-- Item 21: Grand Reception & Trust Entrance -->
+						<div class="col-md-6 col-sm-6 col-xs-12 gal-item activities campuses" style="padding-left: 8px; padding-right: 8px;">
+							<a href="assets/img/gallery/shri-hari-trust-entrance.webp" class="gallery-box lg-trigger" data-sub-html="<h4>Grand Reception & Trust Entrance</h4><p>Vibrant administrative foyer and parent consultation lounge</p>">
+								<picture>
+									<source srcset="assets/img/gallery/shri-hari-trust-entrance.webp" type="image/webp">
+									<img src="assets/img/gallery/shri-hari-trust-entrance.jpg" alt="Grand Reception & Trust Entrance" loading="lazy">
+								</picture>
+								<div class="gallery-caption">
+									<h4 style="margin: 0; color: #fff; font-weight: 700; font-size: 17px; line-height: 1.3;">Grand Reception & Trust Entrance</h4>
+									<p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9;">Vibrant administrative foyer and parent consultation lounge</p>
+								</div>
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+
+			<!-- ===================================
+			/////// ELEGANT BEIGE FOOTER ///////
+			==================================== -->
+			<footer class="idps-footer-main">
+				<div class="container">
+					<div class="row" style="display: flex; flex-wrap: wrap; align-items: stretch;">
+						<!-- Col 1: About & Logo -->
+						<div class="col-md-4 col-sm-6 margin-bottom-30">
+							<div style="display: flex; align-items: center; margin-bottom: 18px;">
+								<img src="assets/img/logo.svg" alt="IDPS Borivali" style="height: 54px; width: auto; margin-right: 12px;">
+								<div>
+									<div style="color: #0284c7; font-weight: 800; font-size: 18px; line-height: 1.1;">IDPS BORIVALI</div>
+									<div style="color: #1e293b; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">International Delhi Public School</div>
+								</div>
+							</div>
+							<p style="font-size: 14px; color: #1c1917; line-height: 1.8;">
+								<strong>International Delhi Public School, Borivali</strong> is committed to world-class CBSE education, nurturing young minds with holistic pedagogy, STEM learning, and athletic growth in Mumbai.
+							</p>
+							<div class="margin-top-15">
+								<a href="https://www.facebook.com/idpsborivali" target="_blank" style="color: #0284c7; margin-right: 14px; font-size: 18px;"><i class="fab fa-facebook-f"></i></a>
+								<a href="https://www.instagram.com/idpsmumbai/" target="_blank" style="color: #0284c7; margin-right: 14px; font-size: 18px;"><i class="fab fa-instagram"></i></a>
+								<a href="https://wa.me/917738196931" target="_blank" style="color: #25d366; margin-right: 14px; font-size: 18px;"><i class="fab fa-whatsapp"></i></a>
+							</div>
+						</div>
+
+						<!-- Col 2: Academics -->
+						<div class="col-md-2 col-sm-6 margin-bottom-30">
+							<h5>Academics</h5>
+							<ul>
+								<li><a href="brands.html"><i class="fas fa-chevron-right small text-info"></i> Pre-Primary (Nursery-KG)</a></li>
+								<li><a href="brands.html"><i class="fas fa-chevron-right small text-info"></i> Primary School (1-5)</a></li>
+								<li><a href="brands.html"><i class="fas fa-chevron-right small text-info"></i> Etiquette & Financial Literacy</a></li>
+								<li><a href="brands.html"><i class="fas fa-chevron-right small text-info"></i> 360° Holistic Education</a></li>
+								<li><a href="brands.html"><i class="fas fa-chevron-right small text-info"></i> STEM & Robotics</a></li>
+							</ul>
+						</div>
+
+						<!-- Col 3: Quick Links -->
+						<div class="col-md-2 col-sm-6 margin-bottom-30">
+							<h5>Quick Links</h5>
+							<ul>
+								<li><a href="about.html"><i class="fas fa-chevron-right small text-info"></i> About IDPS Borivali</a></li>
+								<li><a href="brands.html"><i class="fas fa-chevron-right small text-info"></i> CBSE Curriculum</a></li>
+								<li><a href="schools.html"><i class="fas fa-chevron-right small text-info"></i> Campus Facilities</a></li>
+								<li><a href="franchise.html"><i class="fas fa-chevron-right small text-info"></i> Admissions 2026-27</a></li>
+								<li><a href="gallery.html"><i class="fas fa-chevron-right small text-info"></i> Campus Photo Tour</a></li>
+								<li><a href="contact.html"><i class="fas fa-chevron-right small text-info"></i> Contact Borivali Campus</a></li>
+							</ul>
+						</div>
+
+						<!-- Col 4: Borivali Campus Office -->
+						<div class="col-md-4 col-sm-6 margin-bottom-30">
+							<h5>Borivali Campus</h5>
+							<p style="color: #1c1917; margin-bottom: 8px;">
+								<i class="fas fa-map-marker-alt text-info"></i> <strong>Location:</strong> International Delhi Public School, IDPS Borivali, Mumbai, Maharashtra
+							</p>
+							<p style="color: #1c1917; margin-bottom: 8px;">
+							<i class="fas fa-phone-alt text-info"></i> <strong>Phone:</strong> +91 77381 96931
+						</p>
+						<p style="color: #1c1917; margin-bottom: 8px;">
+							<i class="fab fa-whatsapp text-success"></i> <strong>WhatsApp:</strong> +91 77381 96931
+						</p>
+							<p style="color: #1c1917; margin-bottom: 8px;">
+								<i class="fas fa-envelope text-info"></i> <strong>Email:</strong> admissions@idpsborivali.com
+							</p>
+							<div class="margin-top-15">
+								<a href="franchise.html" class="btn btn-idps btn-sm btn-pill" style="font-weight: 700;">Apply for Admission</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+			<div class="idps-footer-bottom">
+				<div class="container text-center">
+					<div class="row" style="display: flex; flex-wrap: wrap; align-items: stretch;">
+						<div class="col-sm-6 text-left">
+							&copy; 2026 International Delhi Public School, IDPS Borivali. All Rights Reserved.
+						</div>
+						<div class="col-sm-6 text-right">
+							<span>Affiliated with CBSE • International Delhi Public School, Borivali, Mumbai</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Floating Actions -->
+		<div class="idps-floating-actions">
+			<a href="https://wa.me/917738196931" target="_blank" class="idps-floating-btn idps-btn-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+			<a href="tel:+917738196931" class="idps-floating-btn idps-btn-call" title="Call Us"><i class="fas fa-phone-alt"></i></a>
+		</div>
+
+		<script src="assets/vendor/jquery/jquery.min.js"></script>
+		<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/vendor/lightgallery/js/lightgallery-all.min.js"></script>
+		<script src="assets/js/theme.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				// Initialize LightGallery
+				$('.lightgallery').lightGallery({
+					selector: '.lg-trigger',
+					thumbnail: true,
+					animateThumb: true,
+					showThumbByDefault: true
+				});
+
+				// Gallery category filter
+				$('.gallery-filter-btn').on('click', function() {
+					$('.gallery-filter-btn').removeClass('active');
+					$(this).addClass('active');
+					var filter = $(this).data('filter');
+					if(filter === 'all') {
+						$('.gal-item').fadeIn(300);
+					} else {
+						$('.gal-item').hide();
+						$('.gal-item.' + filter).fadeIn(300);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
+
+
