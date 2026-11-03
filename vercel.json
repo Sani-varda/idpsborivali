@@ -8,3 +8,4 @@
     { "source": "/page-404(.*)", "destination": "/404$1", "permanent": true }
   ]
 }
+

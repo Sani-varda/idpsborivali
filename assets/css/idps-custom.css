@@ -2164,13 +2164,14 @@ table, table th, table td,
 }
 
 .idps-rainbow-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
 }
 
 .idps-rainbow-img-wrap {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 220px;
   overflow: hidden;
   background: #f1f5f9;
 }
@@ -2183,13 +2184,13 @@ table, table th, table td,
 }
 
 .idps-rainbow-card:hover .idps-rainbow-img-wrap img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .idps-rainbow-img-badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 14px;
+  left: 14px;
   padding: 5px 14px;
   border-radius: 20px;
   font-size: 11px;
@@ -2202,7 +2203,7 @@ table, table th, table td,
 }
 
 .idps-rainbow-card-body {
-  padding: 26px 24px;
+  padding: 24px 22px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -2215,20 +2216,21 @@ table, table th, table td,
 }
 
 .idps-rainbow-card .idps-rainbow-icon-wrap {
-  width: 50px;
-  height: 50px;
-  min-width: 50px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   border-radius: 50%;
-  margin: 0 16px 0 0;
+  margin: 0 14px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
+.idps-rainbow-header .idps-rainbow-title,
 .idps-rainbow-title {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 800;
   margin: 0;
   line-height: 1.3;
@@ -2236,72 +2238,47 @@ table, table th, table td,
 }
 
 .idps-rainbow-desc {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #0f172a;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #334155;
   text-align: left;
   margin-bottom: 16px;
-  flex-grow: 1;
 }
 
 .idps-rainbow-list {
   padding-left: 0;
   list-style: none;
   font-size: 13px;
-  line-height: 1.8;
+  line-height: 1.65;
   color: #1e293b;
-  margin-bottom: 0;
+  margin-bottom: 18px;
   border-top: 1px dashed #e2e8f0;
   padding-top: 14px;
   text-align: left;
-}
-
-.idps-rainbow-card:hover {
-  transform: translateY(-8px);
-}
-
-.idps-rainbow-icon-wrap {
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  margin: 0 auto 18px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-}
-
-.idps-rainbow-title {
-  font-size: 18px;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 12px;
-  line-height: 1.35;
-}
-
-.idps-rainbow-desc {
-  font-size: 13.5px;
-  line-height: 1.7;
-  color: #0f172a;
-  text-align: center;
-  margin-bottom: 16px;
   flex-grow: 1;
 }
 
-.idps-rainbow-list {
-  padding-left: 0;
-  list-style: none;
-  font-size: 12.5px;
-  line-height: 1.8;
-  color: #1e293b;
-  margin-bottom: 0;
-  border-top: 1px dashed #e2e8f0;
-  padding-top: 12px;
+.idps-rainbow-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
 }
 
-.idps-rainbow-list li {
-  margin-bottom: 4px;
+.idps-rainbow-milestone {
+  margin-top: auto;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.idps-rainbow-milestone-title {
+  font-weight: 800;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 3px;
 }
 
 /* Specific Rainbow Color Variations */
