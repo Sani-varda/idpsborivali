@@ -2737,13 +2737,33 @@ table, table th, table td,
   right: 35px;
   background: rgba(15, 23, 42, 0.92);
   backdrop-filter: blur(8px);
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 16px 24px;
   border-radius: 10px;
   text-align: left;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   border-left: 4px solid #f59e0b;
   z-index: 5;
+}
+
+.idps-about-fullbleed-badge span {
+  color: #ffffff !important;
+  display: block;
+}
+
+.idps-about-fullbleed-badge h4 {
+  color: #ffffff !important;
+  margin: 4px 0 0 0 !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.idps-about-fullbleed-badge p {
+  color: #ffffff !important;
+  opacity: 0.95;
+  margin: 4px 0 0 0 !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
 }
 
 @media (max-width: 768px) {
