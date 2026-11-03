@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/brands(.*)", "destination": "/academics$1", "permanent": true },
+    { "source": "/schools(.*)", "destination": "/facilities$1", "permanent": true },
+    { "source": "/franchise(.*)", "destination": "/admissions$1", "permanent": true },
+    { "source": "/page-404(.*)", "destination": "/404$1", "permanent": true }
+  ]
+}
