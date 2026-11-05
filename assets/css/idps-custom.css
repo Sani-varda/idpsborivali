@@ -2987,3 +2987,123 @@ table, table th, table td,
     padding-right: 15px;
   }
 }
+
+/* ==========================================================================
+   Responsive Director Section Fixes (Mobile & Tablet View)
+   ========================================================================== */
+.compare-table-box {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0f2fe;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.06);
+  margin: 35px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.compare-table-box table {
+  margin-bottom: 0;
+  min-width: 620px;
+}
+
+@media (max-width: 991px) {
+  .idps-director-main-row {
+    display: block !important;
+  }
+  .idps-director-main-row > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    float: none !important;
+  }
+  .director-content-wrap {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 25px;
+  }
+  .idps-director-about-row {
+    flex-direction: column-reverse !important;
+  }
+  .idps-director-about-row > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+  .idps-director-about-content {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 20px;
+  }
+  .idps-profile-card {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .director-content-wrap h2,
+  .idps-director-about-content h2 {
+    font-size: 22px !important;
+    line-height: 1.35 !important;
+    margin-top: 10px !important;
+    margin-bottom: 18px !important;
+  }
+  .director-content-wrap h3,
+  .idps-director-about-content h3 {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+  }
+  .idps-quote-box {
+    padding: 16px 18px !important;
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
+    margin: 18px 0 !important;
+  }
+  .idps-quote-box i {
+    font-size: 18px !important;
+  }
+  .idps-message-body {
+    font-size: 14.5px !important;
+    line-height: 1.8 !important;
+  }
+  .idps-message-body ul {
+    padding-left: 18px !important;
+  }
+  .idps-message-body ul li {
+    margin-bottom: 12px;
+    line-height: 1.65;
+  }
+  .compare-table-box {
+    margin: 20px 0 !important;
+    border-radius: 12px !important;
+  }
+  .compare-table-box th,
+  .compare-table-box td {
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+  }
+  .director-feature-card {
+    padding: 20px 16px !important;
+    margin-bottom: 18px !important;
+  }
+  .idps-principal-pillar-item {
+    align-items: flex-start !important;
+    padding: 12px 14px !important;
+  }
+  .idps-principal-pillar-item i {
+    margin-top: 3px;
+    font-size: 18px !important;
+  }
+  .idps-director-btn-group {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .idps-director-btn-group .btn {
+    width: 100% !important;
+    text-align: center;
+    margin-right: 0 !important;
+  }
+}

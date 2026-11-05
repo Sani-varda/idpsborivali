@@ -86,13 +86,15 @@
 			background: #ffffff;
 			border-radius: 16px;
 			border: 1px solid #e0f2fe;
-			overflow: hidden;
 			box-shadow: 0 10px 30px rgba(2, 132, 199, 0.06);
 			margin: 35px 0;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
 		}
 
 		.compare-table-box table {
 			margin-bottom: 0;
+			min-width: 620px;
 		}
 
 		.compare-table-box th {
@@ -105,6 +107,72 @@
 			padding: 16px 20px !important;
 			font-size: 14px;
 			vertical-align: middle !important;
+		}
+
+		@media (max-width: 991px) {
+			.idps-director-main-row {
+				display: block !important;
+			}
+			.idps-director-main-row > [class*="col-"] {
+				width: 100% !important;
+				max-width: 100% !important;
+				flex: 0 0 100% !important;
+				float: none !important;
+			}
+			.director-content-wrap {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+				margin-top: 25px;
+			}
+			.idps-profile-card {
+				max-width: 440px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.director-content-wrap h2 {
+				font-size: 22px !important;
+				line-height: 1.35 !important;
+				margin-top: 10px !important;
+				margin-bottom: 18px !important;
+			}
+			.director-content-wrap h3 {
+				font-size: 19px !important;
+				line-height: 1.4 !important;
+				margin-top: 24px !important;
+				margin-bottom: 12px !important;
+			}
+			.idps-quote-box {
+				padding: 16px 18px !important;
+				font-size: 14.5px !important;
+				line-height: 1.65 !important;
+				margin: 18px 0 !important;
+			}
+			.idps-quote-box i {
+				font-size: 20px !important;
+			}
+			.idps-message-body {
+				font-size: 14.5px !important;
+				line-height: 1.75 !important;
+			}
+			.idps-message-body ul {
+				padding-left: 18px !important;
+			}
+			.idps-message-body ul li {
+				margin-bottom: 12px;
+				line-height: 1.65;
+			}
+			.compare-table-box {
+				margin: 20px 0 !important;
+				border-radius: 12px !important;
+			}
+			.compare-table-box th,
+			.compare-table-box td {
+				padding: 12px 14px !important;
+				font-size: 13px !important;
+			}
 		}
 
 		.idps-highlight-pill {
@@ -263,10 +331,10 @@
 		<!-- Main Director's Address Section -->
 		<section style="padding: 85px 0; background: #ffffff;">
 			<div class="idps-wide-container">
-				<div class="row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+				<div class="row idps-director-main-row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
 
 					<!-- Director Profile Column (Left Col-md-4) -->
-					<div class="col-md-4 text-center margin-bottom-30">
+					<div class="col-md-4 col-sm-12 col-xs-12 text-center margin-bottom-30">
 						<div class="idps-profile-card">
 							<div class="idps-profile-avatar-wrap">
 								<img src="assets/img/idps/director-avatar.svg" alt="Meera Divyesh Desai - IDPS Director"
@@ -317,8 +385,8 @@
 					</div>
 
 					<!-- Director Message Content Column (Right Col-md-8) -->
-					<div class="col-md-8">
-						<div style="padding-left: 15px;">
+					<div class="col-md-8 col-sm-12 col-xs-12">
+						<div class="director-content-wrap" style="padding-left: 15px;">
 
 							<div class="idps-badge">DIRECTOR'S VISION & PHILOSOPHY</div>
 							<h2 style="color: #0284c7; font-weight: 800; font-size: 32px; line-height: 1.35; margin-top: 10px; margin-bottom: 25px;">
@@ -372,6 +440,9 @@
 								</ul>
 
 								<!-- Comparison Box: Traditional vs IDPS Experiential -->
+								<div class="visible-xs text-muted small" style="margin: 20px 0 6px 0; font-weight: 600;">
+									<i class="fas fa-arrows-alt-h text-info"></i> Swipe horizontally to view full comparison &rarr;
+								</div>
 								<div class="compare-table-box table-responsive">
 									<table class="table">
 										<thead>
@@ -452,7 +523,7 @@
 
 				<div class="row">
 					<!-- Card 1 -->
-					<div class="col-md-3 col-sm-6">
+					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="director-feature-card text-center">
 							<div class="feature-icon-circle" style="background: #e0f2fe; color: #0284c7;">
 								<i class="fas fa-laptop-code"></i>
@@ -465,7 +536,7 @@
 					</div>
 
 					<!-- Card 2 -->
-					<div class="col-md-3 col-sm-6">
+					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="director-feature-card text-center">
 							<div class="feature-icon-circle" style="background: #fef3c7; color: #d97706;">
 								<i class="fas fa-balance-scale"></i>
@@ -478,7 +549,7 @@
 					</div>
 
 					<!-- Card 3 -->
-					<div class="col-md-3 col-sm-6">
+					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="director-feature-card text-center">
 							<div class="feature-icon-circle" style="background: #dcfce7; color: #16a34a;">
 								<i class="fas fa-wallet"></i>
@@ -491,7 +562,7 @@
 					</div>
 
 					<!-- Card 4 -->
-					<div class="col-md-3 col-sm-6">
+					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="director-feature-card text-center">
 							<div class="feature-icon-circle" style="background: #f3e8ff; color: #9333ea;">
 								<i class="fas fa-spa"></i>
