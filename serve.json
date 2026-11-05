@@ -1,0 +1,12 @@
+{
+  "public": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/brands", "destination": "/academics.html" },
+    { "source": "/schools", "destination": "/facilities.html" },
+    { "source": "/franchise", "destination": "/admissions.html" },
+    { "source": "/page-404", "destination": "/404.html" }
+  ]
+}
+

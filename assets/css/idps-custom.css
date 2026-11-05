@@ -2410,21 +2410,23 @@ table, table th, table td,
 
 /* 6. Vision & Mission Cards */
 .idps-vision-card {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  color: #0f172a;
+  border: 1px solid #7dd3fc;
   border-radius: 12px;
   padding: 35px 28px;
   height: 100%;
-  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.2);
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.12);
 }
 
 .idps-mission-card {
-  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  color: #0f172a;
+  border: 1px solid #ddd6fe;
   border-radius: 12px;
   padding: 35px 28px;
   height: 100%;
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.12);
 }
 
 /* 7. Learning Beyond Classroom Grid */
