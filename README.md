@@ -17,7 +17,7 @@ IDPS New/
 ├── about.html            # About IDPS Borivali, Campus Story, Vision & Mission
 ├── academics.html        # Academic Wings (Pre-Primary, Primary, Middle, Secondary CBSE)
 ├── facilities.html       # Campus Facilities & Infrastructure (Labs, Sports Turf, Smart Classes, Transport)
-├── admissions.html       # Admissions 2026-2027 (Process, Eligibility, Documents Checklist, Enquiry Form)
+├── admissions.html       # Admissions 2027-2028 (Process, Eligibility, Documents Checklist, Enquiry Form)
 ├── gallery.html          # Campus Photo Tour & Student Life Gallery
 ├── contact.html          # Borivali Campus Office, Map, Contact Info & Message Form
 ├── chairman.html         # Leadership & Academic Direction
