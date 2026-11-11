@@ -7,13 +7,5 @@ Disallow: /scratch/
 Disallow: /assets/vendor/
 Disallow: /.git/
 
-# Major Search Engine Crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
 # Sitemap Location
 Sitemap: https://idpsborivali.com/sitemap.xml
-
