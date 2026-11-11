@@ -46,31 +46,111 @@
 		content="Top-ranked CBSE school in Borivali with smart classrooms, STEM labs, and sports arena. Admissions open 2027-28.">
 	<meta name="twitter:image" content="https://idpsborivali.com/assets/img/idps/hero-idps-borivali.png">
 
-	<!-- Google Structured Data (Schema.org) for IDPS Borivali -->
+	<!-- Google Structured Data (Schema.org / AEO Graph) for IDPS Borivali -->
 	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "School",
-			"name": "International Delhi Public School Borivali",
-			"alternateName": ["IDPS Borivali", "IDPS Mumbai", "International Delhi Public School, Borivali"],
-			"url": "https://idpsborivali.com/",
-			"logo": "https://idpsborivali.com/logo.png",
-			"image": "https://idpsborivali.com/assets/img/idps/hero-idps-borivali.png",
-			"description": "Premier modern CBSE school in Borivali West, Mumbai offering 360-degree holistic education from Nursery to 7th Standard, featuring AI robotics STEM labs, dance and music studios, cricket turf, and life-skills education.",
-			"address": {
-				"@type": "PostalAddress",
-				"streetAddress": "IDPS Borivali Campus",
-				"addressLocality": "Borivali",
-				"addressRegion": "Mumbai, Maharashtra",
-				"postalCode": "400092",
-				"addressCountry": "IN"
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "School",
+				"@id": "https://idpsborivali.com/#school",
+				"name": "International Delhi Public School Borivali",
+				"alternateName": [
+					"IDPS Borivali",
+					"IDPS Mumbai",
+					"International Delhi Public School, Borivali",
+					"IDPS Borivali West"
+				],
+				"url": "https://idpsborivali.com/",
+				"logo": "https://idpsborivali.com/logo.png",
+				"image": "https://idpsborivali.com/assets/img/idps/hero-idps-borivali.png",
+				"description": "Premier modern CBSE school in Borivali West (Gorai-2), Mumbai offering 360-degree holistic education from Nursery to 7th Standard, featuring AI robotics STEM labs, dance and music studios, cricket turf, and life-skills education.",
+				"parentOrganization": {
+					"@type": "EducationalOrganization",
+					"name": "Shri Hari Education Trust",
+					"alternateName": "St. Rock's High School Collaboration"
+				},
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "IDPS Borivali Campus, Gorai-2",
+					"addressLocality": "Borivali West",
+					"addressRegion": "Mumbai, Maharashtra",
+					"postalCode": "400092",
+					"addressCountry": "IN"
+				},
+				"telephone": "+91-7738196931",
+				"email": "admissions@idpsborivali.com",
+				"priceRange": "$$",
+				"openingHours": "Mo-Sa 08:30-17:00",
+				"hasCredential": {
+					"@type": "EducationalOccupationalCredential",
+					"credentialCategory": "Affiliation",
+					"name": "CBSE (Central Board of Secondary Education)"
+				},
+				"sameAs": [
+					"https://www.facebook.com/idpsborivali",
+					"https://www.instagram.com/idpsborivali"
+				]
 			},
-			"telephone": "+91-7738196931",
-			"email": "admissions@idpsborivali.com",
-			"priceRange": "$$",
-			"openingHours": "Mo-Sa 08:30-17:00"
-		}
-		</script>
+			{
+				"@type": "FAQPage",
+				"@id": "https://idpsborivali.com/#faq",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "Which grades are currently open for admission at IDPS Borivali?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Admissions are officially open for Academic Year 2027-28 for Nursery to 7th Standard at our Borivali West (Gorai-2) campus. Seats are allocated on a first-come, first-evaluated basis."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What is the 360° Holistic Development model at IDPS Borivali?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "The 360° Holistic Development Model is built upon 6 rainbow dimensions: 1. Intellectual Thinking & Problem Solving (LEARN), 2. Creative Imagination & Expression (EXPLORE), 3. Emotional Well-being & Confidence (CREATE), 4. Social Leadership & Teamwork (GROW), 5. Physical Fitness & Healthy Living (LEAD), and 6. Ethical Values & Responsible Citizenship (BELONG)."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What safety and security arrangements exist at IDPS Borivali campus?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "IDPS Borivali maintains a 100% secure campus with 24/7 CCTV surveillance, biometric visitor logging, female security guards and nannies, touchless sanitized restrooms, and GPS-tracked school buses with real-time route alerts."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "How can parents schedule a campus tour at IDPS Borivali?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Parents can schedule a personalized campus walkthrough by calling +91 77381 96931, emailing admissions@idpsborivali.com, or submitting an online admission inquiry form at https://idpsborivali.com/contact."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "What educational board and curriculum does IDPS Borivali follow?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "IDPS Borivali follows the future-ready CBSE curriculum aligned with National Education Policy (NEP 2020) and NCF-SE 2023, enriched with AI coding, robotics labs, performing arts, and sports."
+						}
+					}
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": "https://idpsborivali.com/#website",
+				"url": "https://idpsborivali.com/",
+				"name": "IDPS Borivali",
+				"description": "Best CBSE School in Borivali West, Mumbai",
+				"publisher": {
+					"@id": "https://idpsborivali.com/#school"
+				}
+			}
+		]
+	}
+	</script>
 
 	<!-- Favicon & Search Engine Icons -->
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
