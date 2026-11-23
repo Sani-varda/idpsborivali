@@ -380,7 +380,7 @@
 		<!-- ==========================================
 			/////// DOCUMENTS & ADMISSION FORM ///////
 			=========================================== -->
-		<section id="admissionFormSection" style="padding: 70px 0 90px 0; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+		<section id="admissions-form-section" style="padding: 70px 0 90px 0; background: #f8fafc; border-top: 1px solid #e2e8f0;">
 			<div class="idps-wide-container">
 				<div class="row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
 
@@ -423,6 +423,24 @@
 								<i class="fab fa-whatsapp"></i> Chat on WhatsApp
 							</a>
 						</div>
+
+						<!-- IDPS Borivali ↔ Sensora CRM Status Widget -->
+						<div id="idps-status-widget" style="margin: 25px 0 10px 0; padding: 20px 22px; border: 1px solid #cbd5e1; border-radius: 12px; background: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+							<h4 style="margin: 0 0 8px 0; font-size: 16px; font-weight: 800; color: #0f172a;">
+								<i class="fas fa-search-location" style="color: #0284c7; margin-right: 8px;"></i> Check Admission Application Status
+							</h4>
+							<p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Already applied? Enter your Application reference number &amp; mobile number:</p>
+							<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+								<input id="idps-status-ref" placeholder="Application reference (e.g. ENQ-XXXX)" style="padding: 9px 12px; border-radius: 6px; border: 1px solid #cbd5e1; flex: 1; min-width: 160px; font-size: 13.5px;">
+								<input id="idps-status-phone" placeholder="Mobile number" style="padding: 9px 12px; border-radius: 6px; border: 1px solid #cbd5e1; flex: 1; min-width: 150px; font-size: 13.5px;">
+								<button id="idps-status-btn" type="button" style="padding: 9px 18px; border-radius: 6px; border: none; background: #0284c7; color: #fff; font-weight: 700; cursor: pointer; font-size: 13.5px;">Look up</button>
+							</div>
+							<p id="idps-status-msg" style="margin-top: 10px; font-size: 14px; margin-bottom: 0;"></p>
+						</div>
+
+						<!-- CRM Dynamic Content Placeholder: Fees -->
+						<div id="idps-fees" style="margin-top: 15px;"></div>
+
 					</div>
 
 					<!-- Right Col: Online Admission Form -->
@@ -446,36 +464,36 @@
 								Fill out this form to schedule your friendly interaction with our academic team.
 							</p>
 
-							<form onsubmit="event.preventDefault(); alert('Thank you! Your admission enquiry for IDPS Borivali (Nursery to 7th Standard) has been submitted. Our admissions counselor will call you within 24 hours to schedule the Parent & Student Interaction.');">
+							<form id="admissionsEnquiryForm">
 								
 								<div class="form-group">
 									<label style="font-size: 13px; font-weight: 700; color: #0f172a;">Parent / Guardian's Full Name *</label>
-									<input type="text" class="form-control" placeholder="e.g. Rajesh Sharma" required style="height: 46px; border-radius: 8px;">
+									<input type="text" name="parent_name" class="form-control" placeholder="e.g. Rajesh Sharma" required style="height: 46px; border-radius: 8px;">
 								</div>
 
 								<div class="form-group">
 									<label style="font-size: 13px; font-weight: 700; color: #0f172a;">Child's Full Name &amp; Age *</label>
-									<input type="text" class="form-control" placeholder="e.g. Aarav Sharma (Age 6)" required style="height: 46px; border-radius: 8px;">
+									<input type="text" name="student_name" class="form-control" placeholder="e.g. Aarav Sharma (Age 6)" required style="height: 46px; border-radius: 8px;">
 								</div>
 
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label style="font-size: 13px; font-weight: 700; color: #0f172a;">Contact Mobile Number *</label>
-											<input type="tel" class="form-control" placeholder="+91 98765 43210" required style="height: 46px; border-radius: 8px;">
+											<input type="tel" name="mobile_no" class="form-control" placeholder="+91 98765 43210" required style="height: 46px; border-radius: 8px;">
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label style="font-size: 13px; font-weight: 700; color: #0f172a;">Email Address *</label>
-											<input type="email" class="form-control" placeholder="parent@email.com" required style="height: 46px; border-radius: 8px;">
+											<input type="email" name="email" class="form-control" placeholder="parent@email.com" required style="height: 46px; border-radius: 8px;">
 										</div>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label style="font-size: 13px; font-weight: 700; color: #0f172a;">Grade Seeking Admission (Nursery to 7th) *</label>
-									<select class="form-control" required style="height: 46px; border-radius: 8px; font-size: 14px; font-weight: 600;">
+									<select name="grade_applying_for" class="form-control" required style="height: 46px; border-radius: 8px; font-size: 14px; font-weight: 600;">
 										<option value="" disabled selected>-- Select Grade --</option>
 										<option value="nursery">Nursery / Pre-K</option>
 										<option value="jrk">Junior KG</option>
@@ -623,6 +641,8 @@
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/theme.js"></script>
 
+	<!-- IDPS Borivali ↔ Sensora CRM integration -->
+	<script id="idps-crm-integration" src="assets/js/idps-crm.js"></script>
 </body>
 
 </html>

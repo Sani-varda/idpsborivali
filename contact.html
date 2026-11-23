@@ -271,6 +271,20 @@
 								<div class="margin-top-30">
 									<a href="https://wa.me/917738196931" target="_blank" class="btn btn-idps btn-block btn-pill" style="background: #25d366 !important; border-color: #25d366 !important;"><i class="fab fa-whatsapp"></i> Chat Live on WhatsApp</a>
 								</div>
+								<!-- IDPS Borivali ↔ Sensora CRM Status Widget -->
+								<div id="idps-status-widget" style="margin: 25px 0 0 0; padding: 20px 22px; border: 1px solid #cbd5e1; border-radius: 12px; background: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+									<h4 style="margin: 0 0 8px 0; font-size: 16px; font-weight: 800; color: #0f172a;">
+										<i class="fas fa-search-location" style="color: #0284c7; margin-right: 8px;"></i> Check Admission Application Status
+									</h4>
+									<p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Already submitted an application? Look up your status:</p>
+									<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+										<input id="idps-status-ref" placeholder="Application reference (e.g. ENQ-XXXX)" style="padding: 9px 12px; border-radius: 6px; border: 1px solid #cbd5e1; flex: 1; min-width: 160px; font-size: 13.5px;">
+										<input id="idps-status-phone" placeholder="Mobile number" style="padding: 9px 12px; border-radius: 6px; border: 1px solid #cbd5e1; flex: 1; min-width: 150px; font-size: 13.5px;">
+										<button id="idps-status-btn" type="button" style="padding: 9px 18px; border-radius: 6px; border: none; background: #0284c7; color: #fff; font-weight: 700; cursor: pointer; font-size: 13.5px;">Look up</button>
+									</div>
+									<p id="idps-status-msg" style="margin-top: 10px; font-size: 14px; margin-bottom: 0;"></p>
+								</div>
+
 							</div>
 						</div>
 
@@ -281,18 +295,18 @@
 								<h3 style="color: #0284c7; font-weight: 800; font-size: 24px; margin-top: 5px; margin-bottom: 12px;">We'd Love to Hear From You</h3>
 								<p class="small text-muted margin-bottom-25">Schedule a campus tour, meet our academic counselors, or inquire about admissions from Nursery to 5th Standard at IDPS Borivali.</p>
 
-								<form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been received by IDPS BORIVALI. Our team will contact you shortly.');">
+								<form id="contactForm">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="small font-weight-bold">Your Name *</label>
-												<input type="text" class="form-control" placeholder="Enter your full name" required style="border-radius: 6px; height: 44px;">
+												<input type="text" name="parent_name" class="form-control" placeholder="Enter your full name" required style="border-radius: 6px; height: 44px;">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="small font-weight-bold">Phone Number *</label>
-												<input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required style="border-radius: 6px; height: 44px;">
+												<input type="tel" name="mobile_no" class="form-control" placeholder="+91 XXXXX XXXXX" required style="border-radius: 6px; height: 44px;">
 											</div>
 										</div>
 									</div>
@@ -301,13 +315,13 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="small font-weight-bold">Email Address *</label>
-												<input type="email" class="form-control" placeholder="your@email.com" required style="border-radius: 6px; height: 44px;">
+												<input type="email" name="email" class="form-control" placeholder="your@email.com" required style="border-radius: 6px; height: 44px;">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="small font-weight-bold">Inquiry Category</label>
-												<select class="form-control" style="border-radius: 6px; height: 44px;">
+												<select name="inquiry_category" class="form-control" style="border-radius: 6px; height: 44px;">
 													<option selected>Student Admission Inquiry (Nursery to 5th Standard)</option>
 													<option>Book a Campus Tour & Facility Visit</option>
 													<option>Teacher Recruitment / Career</option>
@@ -319,12 +333,12 @@
 
 									<div class="form-group">
 										<label class="small font-weight-bold">Subject *</label>
-										<input type="text" class="form-control" placeholder="Brief subject" required style="border-radius: 6px; height: 44px;">
+										<input type="text" name="subject" class="form-control" placeholder="Brief subject" required style="border-radius: 6px; height: 44px;">
 									</div>
 
 									<div class="form-group">
 										<label class="small font-weight-bold">Your Message *</label>
-										<textarea class="form-control" rows="5" placeholder="Write your message here..." required style="border-radius: 6px;"></textarea>
+										<textarea name="message" class="form-control" rows="5" placeholder="Write your message here..." required style="border-radius: 6px;"></textarea>
 									</div>
 
 									<button type="submit" class="btn btn-idps btn-pill" style="font-weight: 700; padding: 12px 30px;"><i class="fas fa-paper-plane"></i> Send Message</button>
@@ -442,7 +456,9 @@
 		<script src="assets/vendor/jquery/jquery.min.js"></script>
 		<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="assets/js/theme.js"></script>
-	</body>
+		<!-- IDPS Borivali ↔ Sensora CRM integration -->
+	<script id="idps-crm-integration" src="assets/js/idps-crm.js"></script>
+</body>
 </html>
 
 

@@ -1868,25 +1868,25 @@
 							<p class="small text-muted margin-bottom-20">Connect directly with our Borivali Campus
 								Admission Office.</p>
 
-							<form action="contact.html" method="GET">
+							<form id="homeEnquiryForm" action="contact.html" method="GET">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Parent's Full Name *" required
+									<input type="text" name="parent_name" class="form-control" placeholder="Parent's Full Name *" required
 										style="border-radius: 6px;">
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Student's Name & Age *"
+									<input type="text" name="student_name" class="form-control" placeholder="Student's Name & Age *"
 										required style="border-radius: 6px;">
 								</div>
 								<div class="form-group">
-									<input type="tel" class="form-control" placeholder="Contact Mobile Number *"
+									<input type="tel" name="mobile_no" class="form-control" placeholder="Contact Mobile Number *"
 										required style="border-radius: 6px;">
 								</div>
 								<div class="form-group">
-									<input type="email" class="form-control" placeholder="Email Address *" required
+									<input type="email" name="email" class="form-control" placeholder="Email Address *" required
 										style="border-radius: 6px;">
 								</div>
 								<div class="form-group">
-									<select class="form-control" style="border-radius: 6px;" required>
+									<select name="grade_applying_for" class="form-control" style="border-radius: 6px;" required>
 										<option value="">Select Grade Seeking Admission (Nursery to 7th Standard) *</option>
 										<option value="Playgroup">Playgroup</option>
 										<option value="Nursery">Nursery (Age 3+)</option>
@@ -2024,6 +2024,7 @@
 					</p>
 				</div>
 
+				<div id="idps-news" style="margin-bottom: 25px;"></div>
 				<!-- Instagram 4 Posts Grid -->
 				<div class="row" style="display: flex; flex-wrap: wrap; align-items: stretch;">
 					<!-- Post 1 -->
@@ -2308,6 +2309,8 @@
 		});
 	</script>
 
+	<!-- IDPS Borivali ↔ Sensora CRM integration -->
+	<script id="idps-crm-integration" src="assets/js/idps-crm.js"></script>
 </body>
 
 </html>
