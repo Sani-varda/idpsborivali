@@ -24,9 +24,17 @@
   function post(path, body, done){
     fetch(API + path, {method:"POST", credentials:"omit",
       headers:{"Content-Type":"application/json"}, body:JSON.stringify(body)})
-    .then(function(r){return r.json();}).then(function(json){
+    .then(function(r){
+      return r.text().then(function(txt){
+        try { return JSON.parse(txt); }
+        catch(e){ return {status:"error", message:"Unexpected server response (" + r.status + "). Please call +91 77381 96931."}; }
+      });
+    }).then(function(json){
       done(json && json.message ? json.message : json);
-    }).catch(function(){done({status:"error",message:"Network error — please call +91 77381 96931."});});
+    }).catch(function(err){
+      if (window.console && console.error) console.error("IDPS CRM error:", err);
+      done({status:"error",message:"Network error — please call +91 77381 96931."});
+    });
   }
 
   function show(form, msg, ok){
@@ -34,15 +42,16 @@
     if (!box){
       box = document.createElement("div");
       box.className = "idps-result";
-      box.style.cssText = "margin-top:10px;padding:12px;border-radius:6px;font-size:14px;text-align:center;font-weight:600;";
+      box.style.cssText = "margin-top:12px;padding:12px;border-radius:6px;font-size:14px;text-align:center;font-weight:600;";
       form.appendChild(box);
     }
+    if (box._hideTimer) clearTimeout(box._hideTimer);
     box.style.display = "block";
     box.textContent = msg;
     box.style.background = ok ? "#d1fae5" : "#fee2e2";
     box.style.color = ok ? "#065f46" : "#991b1b";
     box.style.border = "1px solid " + (ok ? "#86efac" : "#fca5a5");
-    setTimeout(function(){box.style.display="none";}, 7000);
+    box._hideTimer = setTimeout(function(){box.style.display="none";}, 10000);
   }
 
   function bindForm(form, section){
@@ -56,6 +65,13 @@
 
     form.onsubmit = function(e){
       e.preventDefault();
+      var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+      var origHtml = submitBtn ? submitBtn.innerHTML : "";
+      if (submitBtn){
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+      }
+
       var fd = new FormData(form), data = {site_key:SITE_KEY};
       fd.forEach(function(v,k){if (k && !k.startsWith("hp_")) data[k] = v;});
       Object.assign(data, captureUtm());
@@ -70,11 +86,15 @@
       data.landing_page = location.pathname;
 
       post("submit_enquiry", data, function(m){
-        if (m.status === "success"){
+        if (submitBtn){
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = origHtml;
+        }
+        if (m && m.status === "success"){
           show(form, "Thank you! Application reference " + m.reference + " — we'll call you within 24 hours.", true);
           form.reset();
         } else {
-          show(form, m.message || "Couldn't submit — please call +91 77381 96931.", false);
+          show(form, (m && m.message) || "Couldn't submit — please call +91 77381 96931.", false);
         }
       });
     };
