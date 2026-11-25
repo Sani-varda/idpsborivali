@@ -21,13 +21,34 @@
     return out;
   }
 
+  function extractFrappeError(json, statusCode){
+    if (json && json._server_messages){
+      try {
+        var arr = JSON.parse(json._server_messages);
+        if (Array.isArray(arr) && arr.length){
+          var first = typeof arr[0] === "string" ? JSON.parse(arr[0]) : arr[0];
+          if (first && first.message) return first.message;
+        }
+      } catch(e){}
+    }
+    if (json && json.exc_type) return json.exc_type + " (" + statusCode + ") — please call +91 77381 96931.";
+    return null;
+  }
+
   function post(path, body, done){
     fetch(API + path, {method:"POST", credentials:"omit",
       headers:{"Content-Type":"application/json"}, body:JSON.stringify(body)})
     .then(function(r){
       return r.text().then(function(txt){
-        try { return JSON.parse(txt); }
+        var json;
+        try { json = JSON.parse(txt); }
         catch(e){ return {status:"error", message:"Unexpected server response (" + r.status + "). Please call +91 77381 96931."}; }
+        if (!r.ok && (!json || !json.message)){
+          var errMsg = extractFrappeError(json, r.status);
+          if (window.console && console.error) console.error("IDPS CRM HTTP " + r.status + ":", json);
+          return {status:"error", message: errMsg || ("Server error (" + r.status + ") — please call +91 77381 96931.")};
+        }
+        return json;
       });
     }).then(function(json){
       done(json && json.message ? json.message : json);
