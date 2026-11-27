@@ -152,9 +152,21 @@
 				"@id": "https://idpsborivali.com/#website",
 				"url": "https://idpsborivali.com/",
 				"name": "IDPS Borivali",
-				"description": "Best CBSE School in Borivali West, Mumbai",
+				"description": "Best School in Borivali & Mumbai - CBSE Affiliated",
 				"publisher": {
 					"@id": "https://idpsborivali.com/#school"
+				}
+			},
+			{
+				"@type": "WebPage",
+				"@id": "https://idpsborivali.com/#webpage",
+				"url": "https://idpsborivali.com/",
+				"name": "Best School in Borivali, Mumbai | IDPS Borivali",
+				"isPartOf": { "@id": "https://idpsborivali.com/#website" },
+				"about": { "@id": "https://idpsborivali.com/#school" },
+				"speakable": {
+					"@type": "SpeakableSpecification",
+					"cssSelector": [".idps-foundation-bar h1", ".idps-foundation-bar p"]
 				}
 			}
 		]
